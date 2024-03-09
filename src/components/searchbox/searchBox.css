@@ -1,0 +1,28 @@
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10rem;
+  flex-direction: column;
+}
+
+.search-input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 500px;
+}
+
+.search-results {
+  margin-top: 16px;
+  font-size: 18px;
+  width: 500px;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+.search-results textarea {
+  width: 100%;
+  box-sizing: border-box;
+}

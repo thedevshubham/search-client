@@ -1,14 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { hydrateRoot } from "react-dom/client";
+import { createRoot } from "react-dom/client";
+import { client } from "./apollo-client";
+import { ApolloProvider } from "@apollo/client";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
+// createRoot(document.getElementById("root")).render(
+//   <ApolloProvider client={client}>
+//     <App />
+//   </ApolloProvider>
+// );
+
+const domNode = document.getElementById("root");
+const root = hydrateRoot(
+  domNode,
+  <ApolloProvider client={client}>
     <App />
-  </React.StrictMode>
+  </ApolloProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
